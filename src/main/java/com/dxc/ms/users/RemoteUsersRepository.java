@@ -20,20 +20,21 @@ public class RemoteUsersRepository implements UserRepository {
 	@Autowired
     private JdbcTemplate jdbcTemplate;
 
-	private Map<String, Users> usersByNumbers = new HashMap<String, Users>();
-	List<Users> uList = new ArrayList<Users>();
+	//private Map<String, Users> usersByNumbers = new HashMap<String, Users>();
+	
 
 	public List<Users> RemoteUsersRepositoryTest() {
+		List<Users> uList = new ArrayList<Users>();
 
         //Users userData = jdbcTemplate.queryForObject("SELECT * FROM users", Users.class);		
 		
-		Users userData = new Users("Krishna", "Kumar" , "kkumar92", 123, "Sec-62 Noida");
-		usersByNumbers.put("101", userData);
+		//Users userData = new Users("Krishna", "Kumar" , "kkumar92", 123, "Sec-62 Noida");
+		//usersByNumbers.put("101", userData);
 		//uList.add(userData);
-		userData = new Users("Krishna1", "Kumar1" , "kkumar921", 1231, "Sec-62 Noida1");
-		usersByNumbers.put("102", userData);
+		//userData = new Users("Krishna1", "Kumar1" , "kkumar921", 1231, "Sec-62 Noida1");
+		//usersByNumbers.put("102", userData);
 		//uList.add(userData);
-		logger.info("userData created");
+		logger.info("method RemoteUsersRepositoryTest called");
 		
 		/*
 		SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
@@ -44,8 +45,8 @@ public class RemoteUsersRepository implements UserRepository {
 	    JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 	    */
 	    
-        String sqlUpdate = "UPDATE users set usersFname=? where usersShortId=?";
-        jdbcTemplate.update(sqlUpdate, "Kimsd", "akumar92");
+        //String sqlUpdate = "UPDATE users set usersFname=? where usersShortId=?";
+        //jdbcTemplate.update(sqlUpdate, "Kimsd", "akumar92");
         
         
         String sqlSelect = "SELECT * FROM users";
@@ -68,8 +69,8 @@ public class RemoteUsersRepository implements UserRepository {
 
 	@Override
 	public List<Users> getAllUsers() {
-		logger.info("kim testing1");
-		uList = this.RemoteUsersRepositoryTest();
+		logger.info("Get AllUsers called first");
+		List<Users> uList = this.RemoteUsersRepositoryTest();
 		//return new ArrayList<Users>(usersByNumbers.values());
 		return uList;
 	}
