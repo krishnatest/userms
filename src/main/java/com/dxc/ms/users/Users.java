@@ -3,6 +3,7 @@ package com.dxc.ms.users;
 import java.io.Serializable;
 
 public class Users implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String usersFname;
 	private String usersLname;
 	private String usersShortId;
@@ -40,8 +41,11 @@ public class Users implements Serializable{
 		this.address = address;
 	}
 	
+	public Users() {
+		
+	}
+	
 	public Users(String usersFname, String usersLname, String usersShortId, long mobile, String address) {
-		super();
 		this.usersFname = usersFname;
 		this.usersLname = usersLname;
 		this.usersShortId = usersShortId;

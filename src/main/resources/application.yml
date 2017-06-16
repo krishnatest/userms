@@ -3,7 +3,19 @@
 spring:
   application:
     name: users-microservice
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+    ddl-auto: validate
 
+  datasource:
+    url: jdbc:mysql://localhost:3308/SpringMs
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    validation-query: SELECT 1 FROM users
+    
 # Discovery Server Access
 eureka:
     client:

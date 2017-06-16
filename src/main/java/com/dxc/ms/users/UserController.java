@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	protected Logger logger = Logger.getLogger(UserController.class.getName());
 	
-	private UserRepository userRepository;
+	@Autowired
+	UserRepository userRepository;
 	
 	@RequestMapping("/users")
 	public Users[] all() {
